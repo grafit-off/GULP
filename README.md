@@ -3,10 +3,10 @@
 ## Верстка
  *  ***Часто использованные javascript скрипты***
  *  ***SCSS стуктура и заготовки***
- *  ***Mail PHP*** *(не работает на gitHub Pages)*
+ *  ***Mail PHP*** *(не работает на GitHub Pages)*
 
 ### Перенаправление для перехода в index.html внутри проекта
-[gitHub Pages](https://grafit-off.github.io/gulp/) - перенаправление через 10 сек.
+[GitHub Pages](https://grafit-off.github.io/gulp/) - перенаправление через 10 сек.
 
 
 ## Gulp включает в себя такие плагины
