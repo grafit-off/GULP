@@ -1,29 +1,29 @@
-# Сборка таск менеджера Gulp
+# Сборка таск менеджера Gp
 
- * ul ***Загрухка на хостинг с Gulp`а***
- * ul ***Build версия***
- * ul ***Tiny PNG***
+ *  ***Загрухка на хостинг с Gp`а***
+ *  ***Build версия***
+ *  ***Tiny PNG***
 
 **Включает в себя такие плагины**
- * ul babel/core
- * ul babel/preset-env
- * ul babel-loader
- * ul browser-sync
- * ul del
- * ul gulp-autoprefixer
- * ul gulp-clean-css
- * ul gulp-cli
- * ul gulp-file-include
- * ul gulp-notify
- * ul gulp-rename
- * ul gulp-sass
- * ul gulp-sourcemaps
- * ul gulp-svg-sprite
- * ul gulp-tinypng-compress
- * ul gulp-ttf2woff
- * ul gulp-ttf2woff2
- * ul gulp-uglify-es
- * ul gulp-util
- * ul node-sass
- * ul del
- * ul vinyl-ftp
+ *  babel/core
+ *  babel/preset-env
+ *  babel-loader
+ *  browser-sync
+ *  del
+ *  gp-autoprefixer
+ *  gp-clean-css
+ *  gp-cli
+ *  gp-file-include
+ *  gp-notify
+ *  gp-rename
+ *  gp-sass
+ *  gp-sourcemaps
+ *  gp-svg-sprite
+ *  gp-tinypng-compress
+ *  gp-ttf2woff
+ *  gp-ttf2woff2
+ *  gp-uglify-es
+ *  gp-util
+ *  node-sass
+ *  del
+ *  vinyl-ftp
