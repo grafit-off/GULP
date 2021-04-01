@@ -1,6 +1,6 @@
 # Сборка task-менеджера Gulp и заготовки для верстки
 
-##Верстка
+## Верстка
  *  ***Часто использованные javascript скрипты***
  *  ***SCSS стуктура и заготовки***
  *  ***Mail PHP*** *(не работает на gitHub Pages)*
@@ -9,7 +9,7 @@
 [gitHub Pages](https://grafit-off.github.io/gulp/) - перенаправление через 10 сек.
 
 
-##Gulp включает в себя такие плагины
+## Gulp включает в себя такие плагины
  *  babel/core
  *  babel/preset-env
  *  babel-loader
