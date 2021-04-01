@@ -1,12 +1,10 @@
 # Сборка таск менеджера Gulp
 
-* ul 
  * ul ***Загрухка на хостинг с Gulp`а***
  * ul ***Build версия***
  * ul ***Tiny PNG***
 
 **Включает в себя такие плагины**
-* ul 
  * ul babel/core
  * ul babel/preset-env
  * ul babel-loader
