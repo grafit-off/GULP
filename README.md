@@ -1,11 +1,11 @@
-# Сборка таск менеджера Gulp
+# Сборка таск менеджера Gulp и заготовки для верстки
 
-**Основа**
- *  ***Загрузка на хостинг с Gulp`а***
- *  ***Build версия***
- *  ***Tiny PNG***
+**Верстка**
+ *  ***Часто использованные javascript скрипты***
+ *  ***SCSS стуктура и заготовки***
+ *  ***Mail PHP*** *(не работает на gitHub Pages)*
 
-**Включает в себя такие плагины**
+**Gulp включает в себя такие плагины**
  *  babel/core
  *  babel/preset-env
  *  babel-loader
@@ -28,3 +28,18 @@
  *  node-sass
  *  del
  *  vinyl-ftp
+
+ _Единственный таск - tinyPNG_
+ 
+```js
+gulp.task('tinypng', () => {
+	return src(['./src/img/**/*.jpg', './src/img/**/*.png', './src/img/**/*.jpeg'])
+		.pipe(tiny({
+			key: 'KEY',
+			log: true
+		}))
+		.pipe(dest('./src/img'))
+		.pipe(dest('./build/img'))
+		.pipe(dest('./app/img'))
+})
+```
