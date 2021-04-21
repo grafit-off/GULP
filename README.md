@@ -6,7 +6,7 @@
  *  ***Mail PHP*** *(не работает на GitHub Pages)*
 
 ### Перенаправление для перехода в index.html внутри проекта
-[GitHub Pages](https://grafit-off.github.io/gulp/) - перенаправление через 10 сек.
+[GitHub Pages](https://grafit-off.github.io/GULP/) - перенаправление через 10 сек.
 
 
 ## Gulp включает в себя такие плагины
