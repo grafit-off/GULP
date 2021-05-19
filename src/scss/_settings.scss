@@ -1,5 +1,17 @@
 // Settings
+*,
+*::before,
+*::after {
+	-moz-box-sizing: inherit;
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
 html {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+
 	height: 100%;
 	width: 100%;
 	scroll-behavior: smooth;
@@ -30,15 +42,32 @@ body {
 	-webkit-text-size-adjust: 100%;
 }
 
-header {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+
+	font-size: inherit;
+	font-weight: 400;
+}
+
+p {
+	margin: 0;
+}
+
+.header {
 	flex: 0 0 auto;
 }
 
-main {
+.main-content {
 	flex: 1 0 auto;
+	overflow: hidden;
 }
 
-footer {
+.footer {
 	flex: 0 0 auto;
 }
 

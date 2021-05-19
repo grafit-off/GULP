@@ -1,7 +1,34 @@
 // Animate In Scroll
 // class="animate-item" data-animation='from-left' data-animation-once
-const animItems = document.querySelectorAll('.animate-item');
+document.addEventListener("DOMContentLoaded", () => {
+	console.log("DOM fully loaded and parsed");
 
+	const animItems = document.querySelectorAll(".animate-item");
+
+	const elementInViewport = (element, offsetTop, offsetBottom) => {
+		let bounds = element.getBoundingClientRect();
+		if ((bounds.top + bounds.height - bounds.height * offsetBottom > 0) && (window.innerHeight - bounds.top - bounds.height * offsetTop > 0)) {
+			element.classList.add("animated");
+		} else if (!element.hasAttribute("data-animation-once")) {
+			element.classList.remove("animated");
+		}
+	};
+
+	if (animItems.length != 0) {
+		animItems.forEach(el => {
+			elementInViewport(el, .5, .5);
+		})
+		document.addEventListener('scroll', () => {
+			animItems.forEach(el => {
+				elementInViewport(el, .5, .5);
+			});
+		});
+	};
+});
+// -- //
+
+/*
+// OLD
 const scrollAnimate = () => {
 	// let windowCenter = (window.innerHeight / 2) + window.scrollY;
 	let windowBottom = window.innerHeight + window.scrollY - 300;
@@ -28,6 +55,4 @@ if (animItems.length != 0) {
 } else {
 	console.log('@ANIMATEONSCROLL: "На странице нету елементов анимации, НО функция scrollAnimate включена! Возможно вам стоит её отключить?"')
 }
-
-// -- //
-
+*/

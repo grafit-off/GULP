@@ -45,7 +45,7 @@ const fontsStyle = (done) => {
 					let fontname = items[i].split('.');
 					fontname = fontname[0];
 					if (c_fontname != fontname) {
-						fs.appendFile(srcFonts, '@include font-face("' + fontname + '", "' + fontname + '", 400);\r\n', cb);
+						fs.appendFile(srcFonts, '@include font-face("' + fontname + '", "' + fontname + '", 400, "normal");\r\n', cb);
 					}
 					c_fontname = fontname;
 				}

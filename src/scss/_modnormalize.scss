@@ -347,13 +347,7 @@ template {
 	display: none;
 }
 // -- //
-*,
-*:before,
-*:after {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box;
-}
+
 img {
 	vertical-align: top;
 }
@@ -361,17 +355,6 @@ fieldset {
 	margin: 0;
 	padding: 0;
 	border: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0;
-
-	font-size: inherit;
-	font-weight: 400;
 }
 button,
 input[type="reset"],
@@ -385,7 +368,5 @@ label {
 	cursor: pointer;
 	user-select: none;
 }
-p {
-	margin: 0;
-}
+
 // -- //
