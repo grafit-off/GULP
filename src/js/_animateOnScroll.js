@@ -1,30 +1,26 @@
 // Animate In Scroll
 // class="animate-item" data-animation='from-left' data-animation-once
-document.addEventListener("DOMContentLoaded", () => {
-	console.log("DOM fully loaded and parsed");
+const animItems = document.querySelectorAll(".animate-item");
 
-	const animItems = document.querySelectorAll(".animate-item");
+const elementInViewport = (element, offsetTop, offsetBottom) => {
+	let bounds = element.getBoundingClientRect();
+	if ((bounds.top + bounds.height - bounds.height * offsetBottom > 0) && (window.innerHeight - bounds.top - bounds.height * offsetTop > 0)) {
+		element.classList.add("animated");
+	} else if (!element.hasAttribute("data-animation-once")) {
+		element.classList.remove("animated");
+	}
+};
 
-	const elementInViewport = (element, offsetTop, offsetBottom) => {
-		let bounds = element.getBoundingClientRect();
-		if ((bounds.top + bounds.height - bounds.height * offsetBottom > 0) && (window.innerHeight - bounds.top - bounds.height * offsetTop > 0)) {
-			element.classList.add("animated");
-		} else if (!element.hasAttribute("data-animation-once")) {
-			element.classList.remove("animated");
-		}
-	};
-
-	if (animItems.length != 0) {
+if (animItems.length != 0) {
+	animItems.forEach(el => {
+		elementInViewport(el, .5, .5);
+	})
+	document.addEventListener('scroll', () => {
 		animItems.forEach(el => {
 			elementInViewport(el, .5, .5);
-		})
-		document.addEventListener('scroll', () => {
-			animItems.forEach(el => {
-				elementInViewport(el, .5, .5);
-			});
 		});
-	};
-});
+	});
+};
 // -- //
 
 /*

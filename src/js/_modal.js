@@ -8,12 +8,10 @@ let unlock = true;
 let bodyWasNotLock;
 
 // Проверки
-if (lockPadding.length == 0) {
+if (lockPadding.length === 0) {
 	console.log('@MODALS: "Класс "fixed-padding" нигде не был указан!"')
 }
-if (typeof (disableScroll) == 'function' && typeof (enableScroll)) {
-	console.log(`Тип данных переменных "disableScroll" и "enableScroll": "${typeof (disableScroll)}"! @scrollLockIOS: ON`);
-} else {
+if (typeof (disableScroll) !== 'function' && typeof (enableScroll) !== 'function') {
 	console.log(`Тип данных переменных "disableScroll" и "enableScroll": "${typeof (disableScroll)} и ${typeof (enableScroll)}"! Для IOS НЕ будет выполнятся скрипт scrollLockIOS`);
 }
 // -- //
@@ -33,7 +31,7 @@ if (modalButtons.length > 0) {
 				}, 100)
 				e.preventDefault();
 			} else {
-				console.log(`Такого модального окна нету! ${curentModal}`);
+				console.log(`Модальное окно не существует! ${curentModal}`);
 			}
 		});
 	}
