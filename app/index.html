@@ -67,15 +67,12 @@
 		<meta name="twitter:image" content=""> *вставить ссылку в content	
 	-->
 
-	<!-- <link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin />
+	<!-- Подключаю только woff2, woff подгрузится если нужно
+		<link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin />
 	<link rel="preload" href="fonts/Inter-Light.woff2" as="font" type="font/woff2" crossorigin />
 	<link rel="preload" href="fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
 	<link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
-
-	<link rel="font" href="fonts/Inter-Bold.woff" type="font/woff" />
-	<link rel="font" href="fonts/Inter-Light.woff" type="font/woff" />
-	<link rel="font" href="fonts/Inter-SemiBold.woff" type="font/woff" />
-	<link rel="font" href="fonts/Inter-Regular.woff" type="font/woff" /> -->
+	 -->
 
 	<link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" sizes="180x180" href="resources/favicon.png" />
@@ -86,7 +83,7 @@
 </head>
 
 <body>
-	<header class="header lock-padding">
+	<header class="header fixed-padding">
 	<div class="header__container container">
 
 	</div>
@@ -187,6 +184,7 @@
 		FOOTER
 	</div>
 </footer>
+
 	
 	<!-- <script src="resources/libs/swiper-bundle.min.js"></script> -->
 	<script src="js/main.js"></script>

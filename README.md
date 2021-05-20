@@ -3,7 +3,6 @@
 ## Верстка
  *  ***Часто использованные javascript скрипты***
  *  ***SCSS стуктура и заготовки***
- *  ***Mail PHP*** *(не работает на GitHub Pages)*
 
 ### Перенаправление для перехода в index.html внутри проекта
 [GitHub Pages](https://grafit-off.github.io/GULP/) - перенаправление через 10 сек.
@@ -34,7 +33,7 @@
  *  vinyl-ftp
 
  _Единственный таск - tinyPNG_
- 
+
 ```js
 gulp.task('tinypng', () => {
 	return src(['./src/img/**/*.jpg', './src/img/**/*.png', './src/img/**/*.jpeg'])

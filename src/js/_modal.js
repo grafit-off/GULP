@@ -9,7 +9,7 @@ let bodyWasNotLock;
 
 // Проверки
 if (lockPadding.length == 0) {
-	console.log('@MODALS: "Не забудьте добавить класс "fixed-padding" фиксированным элементам!"')
+	console.log('@MODALS: "Класс "fixed-padding" нигде не был указан!"')
 }
 if (typeof (disableScroll) == 'function' && typeof (enableScroll)) {
 	console.log(`Тип данных переменных "disableScroll" и "enableScroll": "${typeof (disableScroll)}"! @scrollLockIOS: ON`);

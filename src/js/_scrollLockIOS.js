@@ -18,7 +18,7 @@ let enableScroll = () => {
 	document.body.removeAttribute('data-position');
 }
 
-// Слушательна один элемент
+// Слушатель на один элемент
 let scrollLock_BtnListener = (item) => {
 	item.addEventListener('click', (e) => {
 		item.classList.toggle('scroll')
