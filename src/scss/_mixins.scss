@@ -28,7 +28,7 @@
 		#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
 	}
 }
-// Media
+// MediaQuerys
 @mixin maxwidth($maxWidth) {
 	@media (max-width: $maxWidth+px) {
 		@content;

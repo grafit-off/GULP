@@ -83,6 +83,11 @@
 		outline: none;
 	}
 }
+.text-reset {
+	@extend %reset;
+	font-size: inherit;
+	font-weight: 400;
+}
 // -- //
 
 /*! Main classes */

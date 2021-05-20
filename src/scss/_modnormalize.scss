@@ -363,10 +363,11 @@ input[type="radio"],
 input[type="checkbox"] {
 	cursor: pointer;
 }
-
+button:disabled {
+	cursor: default;
+}
 label {
 	cursor: pointer;
 	user-select: none;
 }
-
 // -- //
