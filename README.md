@@ -35,7 +35,7 @@
  _Единственный таск - tinyPNG_
 
 ```js
-gulp.task('tinypng', () => {
+const tinypng = () => {
 	return src(['./src/img/**/*.jpg', './src/img/**/*.png', './src/img/**/*.jpeg'])
 		.pipe(tiny({
 			key: 'KEY',
@@ -44,5 +44,6 @@ gulp.task('tinypng', () => {
 		.pipe(dest('./src/img'))
 		.pipe(dest('./build/img'))
 		.pipe(dest('./app/img'))
-})
+}
+exports.tinypng = tinypng;
 ```

@@ -150,8 +150,8 @@ exports.fileinclude = htmlInclude;
 exports.default = series(clean, parallel(htmlInclude, scripts, fonts, resources, imgToApp, svgSprites), fontsStyle, styles, watchFiles);
 // -- //
 
-// Build
-gulp.task('tinypng', () => {
+// Image Compress
+const tinypng = () => {
 	return src(['./src/img/**/*.jpg', './src/img/**/*.png', './src/img/**/*.jpeg'])
 		.pipe(tiny({
 			key: 'JjZJQ373hGxtHJm3tJjQBcK12Wf2Q39v',
@@ -160,8 +160,10 @@ gulp.task('tinypng', () => {
 		.pipe(dest('./src/img'))
 		.pipe(dest('./build/img'))
 		.pipe(dest('./app/img'))
-})
+}
+exports.tinypng = tinypng;
 
+// Build
 const fontsBuild = () => {
 	src('./src/fonts/**.ttf')
 		.pipe(ttf2woff())
@@ -212,7 +214,6 @@ const htmlIncludeBuild = () => {
 			basepath: '@file'
 		}))
 		.pipe(dest('./build'))
-		.pipe(browserSync.stream());
 }
 
 const imgToAppBuild = () => {
