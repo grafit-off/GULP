@@ -1,4 +1,7 @@
-const body = document.querySelector('body')
+// MODAL
+
+// vars
+const body = document.querySelector('body');
 const modalButtons = document.querySelectorAll('.modal-btn');
 const lockPadding = document.querySelectorAll('.fixed-padding');
 const modalCloseButtons = document.querySelectorAll('.close-modal');
@@ -22,7 +25,6 @@ if (modalButtons.length > 0) {
 			const modalName = modalCurrentButton.dataset.path;
 			const curentModal = document.getElementById(modalName);
 			if (curentModal != null) {
-				console.log(`Открыто модальное окно: ${modalName}`);
 				modalOpen(curentModal);
 				setTimeout(() => {
 					modalCloseButtons.forEach((el) => {

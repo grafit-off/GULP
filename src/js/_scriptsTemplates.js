@@ -1,4 +1,3 @@
-
 // Burger Menu
 const wrapper = document.querySelector('.wrapper')
 const headerBurger = document.querySelector('.header__burger');

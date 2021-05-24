@@ -48,5 +48,10 @@
 @import "components/_footer";
 
 // /*! Modals  */
-// @import "components/_modals";
+@import "components/_modals";
 @import "_animations";
+
+.big {
+	font-size: 60px;
+	color: #6ca0ee;
+}

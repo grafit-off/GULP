@@ -1,23 +1,20 @@
 // COUNTER
-// Тегу указать атрибут "data-count="число"", также перед скриптом должен быть подключен animateOnScroll!
-// counter(елементы где отображать счёт, элемент animateOnScroll, длительность, шаг)
-function counter(elements, animatedItem, coutDuration, coutStep) {
-	if (coutDuration == 'auto' || coutDuration == null) {
-		coutDuration = 2000
-	}
-	if (coutStep == 'auto' || coutStep == null) {
-		coutStep = 1;
-	}
-	if (animatedItem == 'auto' || animatedItem == null) {
-		console.log(`Animated Item не указан! Проверьте подключен ли "animateOnScroll" и указан ли Animated Item! ${animatedItem}`)
+// Тегу указать атрибут "data-count="число"".
+// Перед скриптом должен быть подключен animateOnScroll!
+// counter(елементы где отображать счёт, элемент animateOnScroll (trigger), длительность, шаг)
+// counter(document.querySelectorAll('.big'), document.querySelector('#hero4'));
+
+const counter = (elements, trigger, countDuration = 2000, countStep = 1) => {
+	if (trigger == 'auto' || trigger == null || trigger == undefined) {
+		console.log(`Animated Item не указан! Проверьте подключен ли "animateOnScroll"! ${animatedItem}`)
 	} else {
 		function countNumbers(elements) {
 			elements.forEach((el) => {
 				let n = 0;
 				let num = el.getAttribute("data-count");
-				let t = (coutDuration / (num / coutStep));
+				let t = (countDuration / (num / countStep));
 				let interval = setInterval(() => {
-					n = n + coutStep;
+					n = n + countStep;
 					if (n >= num) {
 						clearInterval(interval);
 					}
@@ -26,7 +23,7 @@ function counter(elements, animatedItem, coutDuration, coutStep) {
 			});
 		}
 		window.addEventListener('scroll', function scrolling() {
-			if (animatedItem.classList.contains('animated')) {
+			if (trigger.classList.contains('animated')) {
 				this.removeEventListener('scroll', scrolling);
 				countNumbers(elements);
 			}
