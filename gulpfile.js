@@ -18,7 +18,6 @@ const tiny = require('gulp-tinypng-compress');
 const gutil = require('gulp-util');
 const ftp = require('vinyl-ftp');
 
-
 const fonts = () => {
 	src('./src/fonts/**.ttf')
 		.pipe(ttf2woff())
