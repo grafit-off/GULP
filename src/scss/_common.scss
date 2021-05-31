@@ -87,11 +87,12 @@
 	@extend %reset;
 	font-size: inherit;
 	font-weight: 400;
+	font-style: normal;
 }
 // -- //
 
 /*! Main classes */
-.text {
+.main-text {
 	font-weight: 400;
 	font-size: $fz-text;
 	line-height: 1.1;
@@ -105,7 +106,6 @@
 		font-size: 16px;
 	}
 }
-
 .main-heading {
 	font-size: $fz-heading;
 	font-weight: 700;
