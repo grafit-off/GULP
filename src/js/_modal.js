@@ -8,6 +8,7 @@ const modalCloseButtons = document.querySelectorAll('.close-modal');
 const timeout = 800;
 let currentCloseBtn;
 let unlock = true;
+let isMultipleClick = false;
 let bodyWasNotLock;
 
 // Проверки
@@ -61,9 +62,17 @@ function modalOpen(curentModal) {
 			bodyLock();
 		}
 		curentModal.classList.add('open');
+
 		curentModal.addEventListener("mousedown", function (e) {
-			if (!e.target.closest('.modal__content')) {
-				modalClose(e.target.closest('.modal'));
+			if (isMultipleClick === false) {
+				if (!e.target.closest('.modal__content')) {
+					modalClose(e.target.closest('.modal'));
+				}
+				isMultipleClick = true;
+			} else {
+				setTimeout(() => {
+					isMultipleClick = false;
+				}, timeout);
 			}
 		});
 	}
@@ -92,13 +101,8 @@ function bodyLock() {
 	body.style.paddingRight = lockPaddingValue;
 	if (!body.classList.contains('lock')) {
 		bodyWasNotLock = true;
-		if (typeof (disableScroll) === "function") {
-
-			if (isiPhone || isiPad || isiPod) {
-				disableScroll();
-			} else {
-				body.classList.add('lock');
-			}
+		if (isiPhone || isiPad || isiPod) {
+			disableScroll();
 		} else {
 			body.classList.add('lock');
 		}
@@ -121,14 +125,9 @@ function bodyUnlock() {
 		}
 		body.style.paddingRight = '0px';
 		if (bodyWasNotLock == true) {
-			if (typeof (enableScroll) === "function") {
-				if (isiPhone || isiPad || isiPod) {
-					enableScroll();
-				} else {
-					body.classList.remove('lock');
-				}
+			if (isiPhone || isiPad || isiPod) {
+				enableScroll();
 			} else {
-
 				body.classList.remove('lock');
 			}
 		}
