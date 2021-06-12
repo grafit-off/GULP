@@ -1,9 +1,14 @@
 :root {
-	--color-theme: black;
+	--color-bg: #fff;
 }
-$main-color: #0f0f0f;
-$sub-color: #151515;
-$accent-color: #363636;
+
+/* .light-theme {
+	--color-bg: #fff;
+}
+
+.dark-theme {
+	--color-bg: #191919;
+} */
 
 $fz-text: 18px;
 $fz-heading: 64px;

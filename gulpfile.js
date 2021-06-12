@@ -29,7 +29,7 @@ const fonts = () => {
 
 const cb = () => { }
 
-let srcFonts = './src/scss/_fonts.scss';
+let srcFonts = './src/scss/resources/_fonts.scss';
 let appFonts = './app/fonts/';
 
 const fontsStyle = (done) => {
@@ -87,7 +87,7 @@ const styles = () => {
 }
 
 const htmlInclude = () => {
-	return src(['./src/*.html', '!src/_*.html'])
+	return src(['./src/**/*.html', '!src/components/_*.html'])
 		.pipe(fileinclude({
 			prefix: '@',
 			basepath: '@file'
@@ -111,7 +111,7 @@ const clean = () => {
 }
 
 const scripts = () => {
-	return src(['./src/js/*.js', '!./src/js/_*.js'])
+	return src(['./src/js/**/*.js', '!./src/js/**/_*.js'])
 		.pipe(fileinclude({
 			prefix: '@',
 			basepath: '@file'
@@ -130,7 +130,7 @@ const watchFiles = () => {
 		}
 	});
 	watch('./src/scss/**/*.scss', styles);
-	watch('./src/*.html', htmlInclude);
+	watch(['./src/*.html', './src/components/*.html'], htmlInclude);
 	watch('./src/img/**/*.jpg', imgToApp);
 	watch('./src/img/**/*.png', imgToApp);
 	watch('./src/img/**/*.jpeg', imgToApp);
@@ -171,7 +171,7 @@ const fontsBuild = () => {
 		.pipe(ttf2woff2())
 		.pipe(dest('./build/fonts/'))
 }
-let srcFontsBuild = './src/scss/_fonts.scss';
+let srcFontsBuild = './src/scss/resources/_fonts.scss';
 let appFontsBuild = './build/fonts/';
 const fontsStyleBuild = (done) => {
 	let file_content = fs.readFileSync(srcFontsBuild);
@@ -207,7 +207,7 @@ const svgSpritesBuild = () => {
 }
 
 const htmlIncludeBuild = () => {
-	return src(['./src/*.html', '!src/_*.html'])
+	return src(['./src/**/*.html', '!src/**/_*.html'])
 		.pipe(fileinclude({
 			prefix: '@',
 			basepath: '@file'
@@ -248,7 +248,7 @@ const stylesBuild = () => {
 }
 
 const scriptsBuild = () => {
-	return src(['./src/js/*.js', '!./src/js/_*.js'])
+	return src(['./src/js/**/*.js', '!./src/js/**/_*.js'])
 		.pipe(fileinclude({
 			prefix: '@',
 			basepath: '@file'

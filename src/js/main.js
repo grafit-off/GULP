@@ -1,8 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 	// Includes
-	// @include('_scrollLockIOS.js');
-	// @include('_animateOnScroll.js');
-	// @include('_modal.js');
+	// @include('components/_scrollLockIOS.js');
+	// @include('components/_animateOnScroll.js');
+	// @include('components/_modal.js');
 	// -- //
 })
-
