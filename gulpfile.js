@@ -149,6 +149,19 @@ exports.fileinclude = htmlInclude;
 exports.default = series(clean, parallel(htmlInclude, scripts, fonts, resources, imgToApp, svgSprites), fontsStyle, styles, watchFiles);
 // -- //
 
+// Host 
+const host = () => {
+	browserSync.init({
+		server: {
+			baseDir: "./app"
+		},
+		tunnel: "grafit-off",
+		open: "tunnel",
+	})
+}
+
+exports.host = host;
+
 // Image Compress
 const tinypng = () => {
 	return src(['./src/img/**/*.jpg', './src/img/**/*.png', './src/img/**/*.jpeg'])

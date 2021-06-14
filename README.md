@@ -32,7 +32,8 @@
  *  del
  *  vinyl-ftp
 
- _Единственный таск - tinyPNG_
+## Таски
+ _Таск по сжатию картинок - tinyPNG_
 
 ```js
 const tinypng = () => {
@@ -46,4 +47,19 @@ const tinypng = () => {
 		.pipe(dest('./app/img'))
 }
 exports.tinypng = tinypng;
+```
+
+_Таск по запуск tunnel сервера - host_
+
+```js
+const host = () => {
+	browserSync.init({
+		server: {
+			baseDir: "./app"
+		},
+		tunnel: "grafit-off",
+		open: "tunnel",
+	})
+}
+exports.host = host;
 ```
