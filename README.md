@@ -63,3 +63,8 @@ const host = () => {
 }
 exports.host = host;
 ```
+_Также добавлен таск по валидации html кода_
+
+```
+	node-w3c-validator -f lint -evH -i app/**/*.html
+```
