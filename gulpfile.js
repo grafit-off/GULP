@@ -87,7 +87,7 @@ const styles = () => {
 }
 
 const htmlInclude = () => {
-	return src(['./src/**/*.html', '!src/components/_*.html'])
+	return src(['./src/**/*.html', '!src/partials/_*.html'])
 		.pipe(fileinclude({
 			prefix: '@',
 			basepath: '@file'
@@ -130,7 +130,7 @@ const watchFiles = () => {
 		}
 	});
 	watch('./src/scss/**/*.scss', styles);
-	watch(['./src/*.html', './src/components/*.html'], htmlInclude);
+	watch(['./src/*.html', './src/partials/*.html'], htmlInclude);
 	watch('./src/img/**/*.jpg', imgToApp);
 	watch('./src/img/**/*.png', imgToApp);
 	watch('./src/img/**/*.jpeg', imgToApp);

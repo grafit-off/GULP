@@ -63,8 +63,14 @@ const host = () => {
 }
 exports.host = host;
 ```
-_Также добавлен таск по валидации html кода - validateHtml_
+_Таск по валидации html кода - validateHtml_
 
 ```
 	node-w3c-validator -f lint -evH -i app/**/*.html
+```
+
+_Таск по запуску JSON Server- json-server_
+
+```
+	json-server --watch app/resources/db.json --port 3004
 ```
