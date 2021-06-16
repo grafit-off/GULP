@@ -1,4 +1,2 @@
 node_modules
 package-lock.json
-src/resources/PHPMailer
-src/resources/mail.php

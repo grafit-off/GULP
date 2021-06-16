@@ -69,7 +69,7 @@ _Таск по валидации html кода - validateHtml_
 	node-w3c-validator -f lint -evH -i app/**/*.html
 ```
 
-_Таск по запуску JSON Server- json-server_
+_Таск по запуску JSON Server- jsonServer_
 
 ```
 	json-server --watch app/resources/db.json --port 3004
