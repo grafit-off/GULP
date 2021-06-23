@@ -9,22 +9,26 @@
 
 @import "resources/_templates.scss";
 @import "resources/_settings.scss";
+
+//* Reset classes
+@import "resources/_reset-classes.scss";
+//* -- //
 // -- //
 
-//* Common styles
-@import "partials/common/_common.scss";
-//* -- //
-
-//* Partials
+// Partials
+//* Sections
 //? Header
 @import "partials/header/_header.scss";
 
 //? Hero
-@import "partials/hero/hero.scss";
+@import "partials/hero/_hero.scss";
 
 //? Footer
 @import "partials/footer/_footer.scss";
-
-//? Components
-// @import "partials/header/components/ .scss";
 //* -- //
+
+//* Components
+@import "partials/common/_main-heading.scss";
+@import "partials/common/_main-text.scss";
+//* -- //
+// -- //

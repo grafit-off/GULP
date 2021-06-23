@@ -108,37 +108,3 @@
 	font-style: normal;
 }
 // -- //
-
-/*! Main classes */
-.main-heading {
-	font-size: $fz-heading;
-	font-weight: 700;
-	@media (max-width: $md1+px) {
-		font-size: 45px;
-	}
-	@media (max-width: $md2+px) {
-		font-size: 35px;
-	}
-	@media (max-width: $md3+px) {
-		font-size: 30px;
-	}
-	@media (max-width: $md4+px) {
-		font-size: 20px;
-	}
-}
-
-.main-text {
-	font-weight: 400;
-	font-size: $fz-text;
-	line-height: 1.1;
-	@media (max-width: $md2+px) {
-		font-size: 16px;
-	}
-	@media (max-width: $md3+px) {
-		font-size: 16px;
-	}
-	@media (max-width: $md4+px) {
-		font-size: 16px;
-	}
-}
-// -- //
