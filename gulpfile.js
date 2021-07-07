@@ -155,6 +155,7 @@ const host = () => {
 		server: {
 			baseDir: "./app"
 		},
+		ghostMode: false,
 		tunnel: "grafit-off",
 		open: "tunnel",
 	})
