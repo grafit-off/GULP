@@ -1,7 +1,6 @@
 // MODAL
 
 // vars
-const body = document.querySelector('body');
 const modalButtons = document.querySelectorAll('.modal-btn');
 const lockPadding = document.querySelectorAll('.fixed-padding');
 const modalCloseButtons = document.querySelectorAll('.close-modal');

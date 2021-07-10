@@ -125,6 +125,7 @@ const scripts = () => {
 
 const watchFiles = () => {
 	browserSync.init({
+		ghostMode: false,
 		server: {
 			baseDir: "./app"
 		}
