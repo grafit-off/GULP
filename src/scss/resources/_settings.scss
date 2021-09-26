@@ -1,14 +1,10 @@
 *,
 *::before,
 *::after {
-	-moz-box-sizing: inherit;
-	-webkit-box-sizing: inherit;
 	box-sizing: inherit;
 }
 
 .html {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
 
 	height: 100%;
@@ -16,10 +12,6 @@
 	scroll-behavior: smooth;
 
 	font-size: 100%;
-
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
 }
 
 .body {
@@ -30,13 +22,10 @@
 	width: 100%;
 
 	background-color: var(--color-bg);
+	color: var(--color-font);
 
 	font-family: $ff;
 	font-size: $fz-text;
-
-	-ms-text-size-adjust: 100%;
-	-moz-text-size-adjust: 100%;
-	-webkit-text-size-adjust: 100%;
 }
 
 .header {

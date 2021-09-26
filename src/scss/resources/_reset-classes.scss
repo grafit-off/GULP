@@ -15,9 +15,8 @@
 /*! Reset classes */
 .btn-reset {
 	width: auto;
-	margin: 0;
-	padding: 0;
 
+	border: 0;
 	background: transparent;
 	outline: 0;
 	color: inherit;
@@ -25,6 +24,7 @@
 	font-family: inherit;
 	font: inherit;
 	cursor: pointer;
+
 	-webkit-font-smoothing: inherit;
 	-moz-osx-font-smoothing: inherit;
 	-webkit-appearance: none;
@@ -32,17 +32,19 @@
 		border: 0;
 		padding: 0;
 	}
-	&:focus {
-		box-shadow: 0 0 0 3px #8edc44;
-		border-radius: 5px;
-	}
-	&:focus-visible {
-		box-shadow: 0 0 0 3px #8edc44;
-		border-radius: 5px;
-	}
-	&:focus:not(:focus-visible) {
-		box-shadow: none;
-		border-radius: 0;
+	@include minwidth(992) {
+		&:focus {
+			box-shadow: 0 0 0 3px #8edc44;
+			border-radius: 5px;
+		}
+		&:focus-visible {
+			box-shadow: 0 0 0 3px #8edc44;
+			border-radius: 5px;
+		}
+		&:focus:not(:focus-visible) {
+			box-shadow: none;
+			border-radius: 0;
+		}
 	}
 	@extend %reset;
 }
@@ -55,17 +57,19 @@
 	&:visited {
 		text-decoration: none;
 	}
-	&:focus {
-		box-shadow: 0 0 0 3px #8edc44;
-		border-radius: 5px;
-	}
-	&:focus-visible {
-		box-shadow: 0 0 0 3px #8edc44;
-		border-radius: 5px;
-	}
-	&:focus:not(:focus-visible) {
-		box-shadow: none;
-		border-radius: 0;
+	@include minwidth(992) {
+		&:focus {
+			box-shadow: 0 0 0 3px #8edc44;
+			border-radius: 5px;
+		}
+		&:focus-visible {
+			box-shadow: 0 0 0 3px #8edc44;
+			border-radius: 5px;
+		}
+		&:focus:not(:focus-visible) {
+			box-shadow: none;
+			border-radius: 0;
+		}
 	}
 	@extend %reset;
 }
@@ -81,27 +85,31 @@
 		-webkit-appearance: none;
 		appearance: none;
 	}
-	&:focus {
-		box-shadow: 0 0 0 3px #8edc44;
-		border-radius: 5px;
-	}
-	&:focus-visible {
-		box-shadow: 0 0 0 3px #8edc44;
-		border-radius: 5px;
-	}
-	&:focus:not(:focus-visible) {
-		box-shadow: none;
-		border-radius: 0;
+	@include minwidth(992) {
+		&:focus {
+			box-shadow: 0 0 0 3px #8edc44;
+			border-radius: 5px;
+		}
+		&:focus-visible {
+			box-shadow: 0 0 0 3px #8edc44;
+			border-radius: 5px;
+		}
+		&:focus:not(:focus-visible) {
+			box-shadow: none;
+			border-radius: 0;
+		}
 	}
 	@extend %reset;
 }
+
 .list-reset {
 	text-indent: 0;
 	list-style: none;
 	list-style-type: none;
-	line-height: 0;
+	line-height: 1;
 	@extend %reset;
 }
+
 .text-reset {
 	@extend %reset;
 	font-size: inherit;
