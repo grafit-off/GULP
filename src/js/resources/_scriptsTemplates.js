@@ -5,6 +5,76 @@ const headerMenu = document.querySelector('.header__menu');
 const headerLink = document.querySelectorAll('.header__link');
 const md3 = window.matchMedia("(max-width: 767px)");
 
+// Accordion
+class Accordion {
+  constructor(params) {
+	 this.accordion = params.selector;
+	 this.trigger = this.accordion.querySelector('.accordion__trigger');
+	 this.body = this.accordion.querySelector('.accordion__body');
+	 this.animated = false;
+
+	 if (params.animSettings) {
+		this.animSettings = params.animSettings;
+	 } else {
+		this.animSettings = { duration: 500, easing: 'ease' };
+	 }
+
+	 this.trigger.addEventListener('click', () => this.toggle());
+  }
+
+  open() {
+	 this.trigger.classList.add('accordion__trigger--active');
+	 this.body.classList.add('accordion__body--show');
+	 this.trigger.setAttribute('aria-expanded', true);
+	 this.body.setAttribute('aria-hidden', false);
+
+	 let bodyHeight = this.body.clientHeight;
+	 this.body.style.height = 0;
+	 this.animated = true;
+
+	 let anim = this.body.animate([
+		{ opacity: '1', height: bodyHeightpx }
+	 ],
+		this.animSettings);
+
+	 anim.addEventListener('finish', () => {
+		this.body.style = null;
+		this.animated = false;
+	 });
+  }
+
+  close() {
+	 this.trigger.classList.remove('accordion__trigger--active');
+	 this.trigger.setAttribute('aria-expanded', false);
+	 this.body.setAttribute('aria-hidden', true);
+
+	 this.body.style.height = this.body.clientHeight + 'px';
+	 this.animated = true;
+
+	 let anim = this.body.animate([
+		{ opacity: '0', height: 0 }
+	 ],
+		this.animSettings);
+
+	 anim.addEventListener('finish', () => {
+		this.body.style = null;
+		this.body.classList.remove('accordion__body--show');
+		this.animated = false;
+	 });
+  }
+
+  toggle() {
+	 if (!this.animated) {
+		if ('animate' in this.body) {
+		  this.body.classList.contains('accordion__body--show') ? this.close() : this.open();
+		} else {
+		  this.body.classList.toggle('accordion__body--show');
+		}
+	 }
+  }
+}
+// -- //
+
 class Burger {
 	constructor(btn, list) {
 		this.btn = btn;
@@ -16,15 +86,17 @@ class Burger {
 
 	open() {
 		this.disableBtn();
-		if (this.isIphone) {
-			disableScroll();
-		} else {
-			body.classList.add('lock')
-		}
 		this.btn.classList.add('burger--active');
 		this.btn.setAttribute('aria-expanded', true);
 		this.list.classList.add('header__nav--active');
 		this.list.setAttribute('aria-hidden', false);
+		if (this.isIphone) {
+			setTimeout(() => {
+				disableScroll();
+			}, 300);
+		} else {
+			body.classList.add('lock')
+		}
 	}
 
 	close() {
@@ -55,6 +127,77 @@ class Burger {
 		})
 	}
 }
+// -- //
+
+// Swiper
+class MobileSwiper {
+	constructor(selector, swiperObj, breakpoint) {
+		this.selector = document.querySelector(`.${selector}`);
+		this.selectorClassName = selector;
+		this.breakpoint = breakpoint;
+		this.swiperObj = swiperObj;
+		this.initSlider = null;
+	}
+	create() {
+		if (window.innerWidth <= this.breakpoint && this.selector.dataset.mobile == 'false') {
+			this.initSlider = new Swiper(this.selector, this.swiperObj);
+			this.selector.dataset.mobile = 'true';
+		}
+	}
+	destroy() {
+		if (window.innerWidth > this.breakpoint) {
+			this.selector.dataset.mobile = 'false';
+			if (this.selector.classList.contains(`${this.selectorClassName}initialized`)) {
+				this.initSlider.destroy();
+			}
+		}
+	}
+	init() {
+		this.selector.dataset.mobile = 'false';
+		this.create();
+		this.destroy();
+	}
+}
+
+const swiperObj = {
+	containerModifierClass: "classification-swiper",
+	wrapperClass: "classification-swiper__wrapper",
+	slideClass: "classification-swiper__slide",
+	slidesPerView: 1,
+	pagination: {
+		el: ".classification-swiper__pagination",
+		clickable: true
+	},
+	watchSlidesVisibility: true
+};
+const classificationSwiper = new MobileSwiper('classification-swiper', swiperObj, 767);
+classificationSwiper.init();
+// -- //
+
+
+// Debounce
+class Debounce {
+	constructor(time = 100, functions = () => { }) {
+		this.time = time;
+		this.functions = functions;
+		this.timeOut = null;
+	}
+
+	init() {
+		clearTimeout(this.timeOut);
+		this.timeOut = setTimeout(() => {
+			this.functions();
+		}, this.time);
+	}
+}
+const resizeFunc = () => {
+	classificationSwiper.init();
+	console.log('Debounce');
+}
+const debounceFunc = new Debounce(100, resizeFunc);
+window.addEventListener('resize', () => {
+	debounceFunc.init();
+});
 // -- //
 
 // Scroll to link
@@ -237,115 +380,6 @@ navOpen()
 navScroll()
 // -- //
 
-// Показ хедера при скролле ВВЕРХ
-
-function headerFixed() {
-	const header = document.querySelector('.header'),
-		offsetHeight = header.offsetHeight;
-	if (pageYOffset > offsetHeight) {
-		header.classList.add('_hide');
-		header.style.display = 'none';
-		setTimeout(() => {
-			header.style.display = 'block';
-		}, 200)
-	}
-	window.addEventListener('load', function () {
-		let height = window.innerHeight;
-		let lostY = 0;
-		document.addEventListener('scroll', function () {
-			if (lostY >= 110) {
-				if (window.scrollY > lostY) {
-					header.classList.add('_hide');
-				} else {
-					if (window.scrollY > height || lostY < offsetHeight) {
-						header.classList.remove('_hide');
-					}
-				}
-			} else {
-				header.classList.remove('_hide');
-			}
-			lostY = window.scrollY;
-		});
-	});
-}
-headerFixed();
-
-// Accordion
-document.querySelectorAll('.accordion-triger').forEach((item) =>
-	item.addEventListener('click', () => {
-		item.parentNode.classList.toggle('accordion--active');
-		let accordionBody = item.parentNode.querySelector('.accordion__body');
-		if (item.parentNode.classList.contains('accordion--active')) {
-			item.parentNode.querySelector('.accordion-triger').setAttribute('aria-expanded', true)
-			accordionBody.setAttribute('aria-hidden', false)
-			accordionBody.style.maxHeight = accordionBody.scrollHeight + 'px';
-		} else {
-			item.parentNode.querySelector('.accordion-triger').setAttribute('aria-expanded', false)
-			accordionBody.setAttribute('aria-hidden', true)
-			accordionBody.style.maxHeight = null;
-		}
-	})
-)
-// -- //
-
-// active class of menu items onscroll
-window.addEventListener('scroll', () => {
-	let scrollDistance = window.scrollY;
-
-	if (window.innerWidth > 768) {
-		document.querySelectorAll('.section').forEach((el, i) => {
-			if (el.offsetTop - document.querySelector('.header').clientHeight <= scrollDistance) {
-				document.querySelectorAll('.header__list a').forEach((el) => {
-					if (el.classList.contains('active')) {
-						el.classList.remove('active');
-					}
-				});
-				document.querySelectorAll('.header__list li')[i].querySelector('a').classList.add('active');
-			}
-		});
-	}
-});
-// -- //
-
-
-// Snackbar
-const snackbarBtn = document.querySelector('.snackbar-btn');
-const snackbar = document.querySelector(".snackbar");
-function snackbarShow(text, type, time, delay) {
-	snackbar.innerHTML = `${text}`;
-	snackbarBtn.disabled = true;
-	if (time == null) {
-		time = 3000;
-	} else if (time == 'auto') {
-		time = 3000;
-	}
-	if (delay == null) {
-		delay = 0;
-	} else if (delay == 'auto') {
-		delay = 0;
-	}
-	setTimeout(() => {
-		if (type == 0) {
-			snackbar.removeAttribute('hidden')
-			snackbar.classList.add('show-notification');
-			setTimeout(function () {
-				snackbar.className = snackbar.className.replace("show-notification", "");
-				snackbar.setAttribute('hidden', 'hidden')
-			}, time);
-		} else if (type == 1) {
-			snackbar.removeAttribute('hidden')
-			snackbar.classList.add('show-attention');
-			setTimeout(function () {
-				snackbar.className = snackbar.className.replace("show-attention", "");
-				snackbar.setAttribute('hidden', 'hidden')
-			}, time);
-		}
-		setTimeout(() => {
-			snackbarBtn.disabled = false;
-		}, time)
-	}, delay)
-}
-// -- //
 
 // cookies
 const cookieEl = document.querySelector('.cookie-block');
@@ -366,68 +400,4 @@ let cookies = () => {
 cookies();
 // -- //
 
-
-// Validate
-function ValidMail(item) {
-	let re = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
-	let myMail = item.value;
-	let valid = re.test(myMail);
-	if (!valid) {
-		snackbarShow('E-mail введен неверно! Проверьте ваши данные!', 1)
-	}
-	return valid;
-}
-function ValidPhone(item) {
-	let re = /^\d[\d\(\)\ -]{7,14}\d$/;
-	let myPhone = item.value;
-	let valid = re.test(myPhone);
-	if (!valid) {
-		snackbarShow('Номер телефона введен неверно! Проверьте ваши данные!', 1)
-	}
-	return valid;
-}
-// -- //
-
-// Fomr PHPMail
-document.querySelector('.form').addEventListener('submit', (e) => {
-	e.preventDefault();
-	let self = e.currentTarget;
-
-	let formData = new FormData(self);
-	let name = self.querySelector('[name="Имя"]').value;
-	let mail = self.querySelector('[name="E-mail"]').value;
-	let tel = self.querySelector('[name="Номер телефона"]').value;
-
-	formData.append('Имя', name);
-	formData.append('Номер телефона', tel);
-	formData.append('E-mail', mail);
-
-	let xhr = new XMLHttpRequest();
-
-	xhr.onreadystatechange = function () {
-		if (xhr.readyState === 4) {
-			if (xhr.status === 200) {
-				console.log('Отправлено');
-				snackbarShow('Покупка оформленна! В скором времени я с вами свяжусь!', 0, 'auto', 1000)
-				popupClose(currentCloseBtn.closest('.popup'));
-				previousActiveElement.focus();
-			} else {
-				snackbarShow('Вы все сделали правильно! Извините, отправка заявок недоступна!', 1, 'auto', 1000)
-				popupClose(currentCloseBtn.closest('.popup'));
-				previousActiveElement.focus();
-			}
-		}
-	}
-
-	xhr.open('POST', '/resources/mail.php', true);
-	if (ValidPhone() && ValidMail()) {
-		xhr.send(formData);
-		self.reset();
-	} else if (ValidMail() == false) {
-		document.querySelector('.form__input--mail').focus();
-	} else if (ValidPhone() == false) {
-		document.querySelector('.form__input--tel').focus();
-	}
-});
-// -- //
 
