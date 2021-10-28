@@ -74,42 +74,47 @@ class Accordion {
   }
 }
 // -- //
-
+// BurgerJS
 class Burger {
 	constructor(btn, list) {
 		this.btn = btn;
 		this.list = list;
 		this.opened = false;
-		this.isIphone = isiPhone || isiPad || isiPod;
 		this.btnDisabled = false;
+		this.scrollWidth = window.innerWidth - document.body.clientWidth;
+
+		this.btn.addEventListener('click', () => {
+			this.toggle();
+		})
 	}
 
 	open() {
 		this.disableBtn();
+		if (this.scrollWidth) {
+			document.body.style.paddingRight = `${this.scrollWidth}px`
+		}
 		this.btn.classList.add('burger--active');
 		this.btn.setAttribute('aria-expanded', true);
-		this.list.classList.add('header__nav--active');
+		this.list.classList.add('nav--active');
 		this.list.setAttribute('aria-hidden', false);
-		if (this.isIphone) {
-			setTimeout(() => {
-				disableScroll();
-			}, 300);
-		} else {
-			body.classList.add('lock')
-		}
+
+		body.classList.add('lock')
 	}
 
 	close() {
 		this.disableBtn();
-		if (this.isIphone) {
-			enableScroll();
-		} else {
-			body.classList.remove('lock')
+		if (this.scrollWidth) {
+			document.body.style.paddingRight = null;
 		}
+		body.classList.remove('lock')
 		this.btn.classList.remove('burger--active');
 		this.btn.setAttribute('aria-expanded', false);
-		this.list.classList.remove('header__nav--active');
+		this.list.classList.remove('nav--active');
 		this.list.setAttribute('aria-hidden', true);
+	}
+
+	calculateScrollbar() {
+
 	}
 
 	toggle() {
@@ -128,7 +133,6 @@ class Burger {
 	}
 }
 // -- //
-
 // Swiper
 class MobileSwiper {
 	constructor(selector, swiperObj, breakpoint) {
