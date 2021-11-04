@@ -79,10 +79,10 @@
 		&:focus:not(:focus-visible) {
 			outline: none;
 		}
-		@media (max-width: $md3+px) {
+		@media (max-width: $md3) {
 			outline: none;
 		}
-		@media (min-width: $md3+px) {
+		@media (min-width: $md3) {
 			&:hover {
 				transform: scale(1.2);
 			}
