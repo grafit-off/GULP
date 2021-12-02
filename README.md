@@ -9,9 +9,6 @@
 
 
 ## Gulp включает в себя такие плагины
- *  babel/core
- *  babel/preset-env
- *  babel-loader
  *  browser-sync
  *  del
  *  gp-autoprefixer
@@ -49,7 +46,7 @@ const tinypng = () => {
 exports.tinypng = tinypng;
 ```
 
-_Таск по запуск tunnel сервера - host_
+_Таск по запуск tunnel сервера - gulp host_
 
 ```js
 const host = () => {
@@ -63,13 +60,13 @@ const host = () => {
 }
 exports.host = host;
 ```
-_Таск по валидации html кода - validateHtml_
+_Таск по валидации html кода - npm run validateHtml_
 
 ```
 	node-w3c-validator -f lint -evH -i app/**/*.html
 ```
 
-_Таск по запуску JSON Server- jsonServer_
+_Таск по запуску JSON Server- npm run jsonServer_
 
 ```
 	json-server --watch app/resources/db.json --port 3004
