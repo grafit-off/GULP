@@ -19,12 +19,16 @@
 	flex-direction: column;
 
 	width: 100%;
+	height: 100%;
 
 	background-color: var(--color-bg);
 	color: var(--color-font);
 
 	font-family: $ff;
 	font-size: $fz-text;
+
+	/* ScrollBar  bg-color, color, width, border-radius */
+	@include scrollBar(#fff, #f85050, 10px, 20px);
 }
 
 .header {
@@ -59,13 +63,6 @@
 	padding-left: 15px;
 	padding-right: 15px;
 	margin: 0 auto;
-}
-
-@media (max-width: $md2) and (orientation: portrait) {
-	.container {
-		padding-left: 10px;
-		padding-right: 10px;
-	}
 }
 
 @media (max-width: $md3) and (orientation: portrait) {

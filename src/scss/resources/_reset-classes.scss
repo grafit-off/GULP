@@ -12,6 +12,7 @@
 
 	overflow: hidden;
 }
+
 /*! Reset classes */
 .btn-reset {
 	width: auto;
@@ -32,18 +33,20 @@
 		border: 0;
 		padding: 0;
 	}
+	transition: box-shadow 0.3s ease;
+
 	@include minwidth(992) {
 		&:focus {
 			box-shadow: 0 0 0 3px #8edc44;
-			border-radius: 5px;
+			transition: box-shadow 0.3s ease;
 		}
 		&:focus-visible {
 			box-shadow: 0 0 0 3px #8edc44;
-			border-radius: 5px;
+			transition: box-shadow 0.3s ease;
 		}
 		&:focus:not(:focus-visible) {
 			box-shadow: none;
-			border-radius: 0;
+			transition: box-shadow 0.3s ease;
 		}
 	}
 	@extend %reset;
@@ -60,15 +63,15 @@
 	@include minwidth(992) {
 		&:focus {
 			box-shadow: 0 0 0 3px #8edc44;
-			border-radius: 5px;
+			transition: box-shadow 0.3s ease;
 		}
 		&:focus-visible {
 			box-shadow: 0 0 0 3px #8edc44;
-			border-radius: 5px;
+			transition: box-shadow 0.3s ease;
 		}
 		&:focus:not(:focus-visible) {
 			box-shadow: none;
-			border-radius: 0;
+			transition: box-shadow 0.3s ease;
 		}
 	}
 	@extend %reset;
@@ -88,15 +91,15 @@
 	@include minwidth(992) {
 		&:focus {
 			box-shadow: 0 0 0 3px #8edc44;
-			border-radius: 5px;
+			transition: box-shadow 0.3s ease;
 		}
 		&:focus-visible {
 			box-shadow: 0 0 0 3px #8edc44;
-			border-radius: 5px;
+			transition: box-shadow 0.3s ease;
 		}
 		&:focus:not(:focus-visible) {
 			box-shadow: none;
-			border-radius: 0;
+			transition: box-shadow 0.3s ease;
 		}
 	}
 	@extend %reset;
@@ -104,7 +107,6 @@
 
 .list-reset {
 	text-indent: 0;
-	// Если убрать маркеры то список станет не семантичным в ВойсОвер, поэтому делаем маркеры пустыми
 	list-style: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E");
 	line-height: 1;
 	@extend %reset;

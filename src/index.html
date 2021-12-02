@@ -14,10 +14,9 @@
 	<meta name="theme-color" content='#ffffff' />
 
 	<!-- SEO META Краткое описание, ключевые слова -->
-	<meta name="description" content="" />
-	<meta name="keywords" content="" />
+	<meta name="description" content="description" />
+	<meta name="keywords" content="keywords" />
 	<!-- Ссылка на сайт -->
-	<meta name="canonical" href=""/>
 
 	<!--  Индексирование странички
 		<meta name="robots" content="" />
@@ -91,10 +90,9 @@
 	<meta name="theme-color" content="#ffffff">
 	<!--  -->
 
-	<link rel="preload" href="fonts/Inter-Bold.woff2" as="font" type="font/woff2" crossorigin />
-	<link rel="preload" href="fonts/Inter-Light.woff2" as="font" type="font/woff2" crossorigin />
-	<link rel="preload" href="fonts/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
-	<link rel="preload" href="fonts/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="fonts/FuturaPT-Bold.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="fonts/FuturaPT-Medium.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="fonts/FuturaPT-Book.woff2" as="font" type="font/woff2" crossorigin />
 
 	<!-- <link rel="stylesheet" href="resources/libs/swiper-bundle.min.css" /> -->
 	<link rel="stylesheet" href="css/main.min.css" />
@@ -104,11 +102,10 @@
 <body class="body">
 	@include('partials/_header.html')
 	<main class="main-content">
-		@include('partials/_hero-section.html')
-
+		@include('partials/sections/_hero.html')
 	</main>
 	@include('partials/_footer.html')
-	<!-- @include('partials/_modals.html') -->
+	<!-- @include('partials/modals/_modal.html') -->
 
 	<!-- <script src="resources/libs/swiper-bundle.min.js"></script> -->
 	<script src="js/main.js"></script>

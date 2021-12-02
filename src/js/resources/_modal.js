@@ -1,5 +1,4 @@
 // MODAL
-
 // vars
 const modalButtons = document.querySelectorAll('.modal-btn');
 const lockPadding = document.querySelectorAll('.fixed-padding');

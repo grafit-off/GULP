@@ -13,7 +13,7 @@
 	<!-- Перенаправление на сайт -->
 	<meta http-equiv="refresh" content="0; URL=app/" />
 
-	<link rel="icon" href="build/resources/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="app/resources/favicon.ico" type="image/x-icon" />
 	<link rel="apple-touch-icon" sizes="180x180" href="app/resources/favicon.png" />
 
 	<title>Перенаправление, подождите секундочку...</title>
@@ -112,12 +112,6 @@
 				text-align: center;
 				font-size: 14px;
 			}
-		}
-
-		@keyframes logoAnimation {
-			0% {}
-
-			100% {}
 		}
 
 		.animation-heart {
@@ -414,213 +408,22 @@
 				box-shadow: -10px 15px 0 rgba(255, 255, 255, 0.2), 10px 15px 0 rgba(255, 255, 255, 0.2), 10px 36px 0 rgba(255, 255, 255, 0.2), -10px 36px 0 #ffffff;
 			}
 		}
-
-		/*  */
-
-		.bird {
-			background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/174479/bird-cells-new.svg);
-			background-size: auto 100%;
-			width: 88px;
-			height: 125px;
-			will-change: background-position;
-
-			animation-name: fly-cycle;
-			animation-timing-function: steps(10);
-			animation-iteration-count: infinite;
-		}
-
-		.bird--one {
-			animation-duration: 1s;
-			animation-delay: -0.5s;
-		}
-
-		.bird--two {
-			animation-duration: 0.9s;
-			animation-delay: -0.75s;
-		}
-
-		.bird--three {
-			animation-duration: 1.25s;
-			animation-delay: -0.25s;
-		}
-
-		.bird--four {
-			animation-duration: 1.1s;
-			animation-delay: -0.5s;
-		}
-
-
-
-		.bird-container {
-			position: absolute;
-			top: 20%;
-			left: -10%;
-			transform: scale(0) translateX(-10vw);
-			will-change: transform;
-
-			animation-name: fly-right-one;
-			animation-timing-function: linear;
-			animation-iteration-count: infinite;
-		}
-
-		.bird-container--one {
-			animation-duration: 15s;
-			animation-delay: 0;
-		}
-
-		.bird-container--two {
-			animation-duration: 16s;
-			animation-delay: 1s;
-		}
-
-		.bird-container--three {
-			animation-duration: 14.6s;
-			animation-delay: 9.5s;
-		}
-
-		.bird-container--four {
-			animation-duration: 16s;
-			animation-delay: 10.25s;
-		}
-
-
-
-		@keyframes fly-cycle {
-
-			100% {
-				background-position: -900px 0;
-			}
-
-		}
-
-		@keyframes fly-right-one {
-
-			0% {
-				transform: scale(0.3) translateX(0vw);
-			}
-
-			10% {
-				transform: translateY(2vh) translateX(10vw) scale(0.4);
-			}
-
-			20% {
-				transform: translateY(0vh) translateX(30vw) scale(0.5);
-			}
-
-			30% {
-				transform: translateY(4vh) translateX(50vw) scale(0.6);
-			}
-
-			40% {
-				transform: translateY(2vh) translateX(70vw) scale(0.6);
-			}
-
-			50% {
-				transform: translateY(0vh) translateX(90vw) scale(0.6);
-			}
-
-			60% {
-				transform: translateY(0vh) translateX(110vw) scale(0.6);
-			}
-
-			100% {
-				transform: translateY(0vh) translateX(110vw) scale(0.6);
-			}
-
-		}
-
-
-
-		@keyframes fly-right-two {
-
-			0% {
-				transform: translateY(-2vh) translateX(-10vw) scale(0.5);
-			}
-
-			10% {
-				transform: translateY(0vh) translateX(10vw) scale(0.4);
-			}
-
-			20% {
-				transform: translateY(-4vh) translateX(30vw) scale(0.6);
-			}
-
-			30% {
-				transform: translateY(1vh) translateX(50vw) scale(0.45);
-			}
-
-			40% {
-				transform: translateY(-2.5vh) translateX(70vw) scale(0.5);
-			}
-
-			50% {
-				transform: translateY(0vh) translateX(90vw) scale(0.45);
-			}
-
-			51% {
-				transform: translateY(0vh) translateX(110vw) scale(0.45);
-			}
-
-			100% {
-				transform: translateY(0vh) translateX(110vw) scale(0.45);
-			}
-
-		}
-
-
-		.hidden {
-			opacity: 0;
-		}
-
-		.console-container {
-			font-size: 4em;
-			text-align: center;
-			height: 200px;
-			width: 100%;
-			display: block;
-			color: white;
-
-
-		}
-
-		@media (max-width:992px) {
-			.console-container {
-				font-size: 26px;
-			}
-		}
-
-		.console-underscore {
-			display: inline-block;
-			position: relative;
-			top: -0.14em;
-			left: 10px;
-		}
 	</style>
 </head>
 
 <body>
-	<div class="container">
-		<div class="bird-container bird-container--one">
-			<div class="bird bird--one"></div>
-		</div>
-		<div class="bird-container bird-container--two">
-			<div class="bird bird--two"></div>
-		</div>
-		<div class="bird-container bird-container--three">
-			<div class="bird bird--three"></div>
-		</div>
-		<div class="bird-container bird-container--four">
-			<div class="bird bird--four"></div>
-		</div>
-	</div>
+
 
 	<a class="logo">
 		<span class='color-red'>grafit</span> _off
 	</a>
 	<h1 class="title">Перенаправление, подождите секундочку...</h1>
 	<div class="animation-heart">
-		<svg id="color" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512" xmlns="http://www.w3.org/2000/svg">
-			<path d="m11.466 22.776c.141.144.333.224.534.224s.393-.08.534-.224l9.594-9.721c4.001-4.053 1.158-11.055-4.532-11.055-3.417 0-4.985 2.511-5.596 2.98-.614-.471-2.172-2.98-5.596-2.98-5.672 0-8.55 6.984-4.531 11.055z" fill="#f44336" />
+		<svg id="color" enable-background="new 0 0 24 24" height="512" viewBox="0 0 24 24" width="512"
+			xmlns="http://www.w3.org/2000/svg">
+			<path
+				d="m11.466 22.776c.141.144.333.224.534.224s.393-.08.534-.224l9.594-9.721c4.001-4.053 1.158-11.055-4.532-11.055-3.417 0-4.985 2.511-5.596 2.98-.614-.471-2.172-2.98-5.596-2.98-5.672 0-8.55 6.984-4.531 11.055z"
+				fill="#f44336" />
 		</svg>
 	</div>
 	<div class="loaders">
@@ -644,61 +447,8 @@
 			<div class="loader-4"></div>
 		</div>
 	</div>
-	<div class='console-container'><span id='text'></span>
-		<div class='console-underscore' id='console'>&#95;</div>
-	</div>
-	<script>
-		consoleText(['grafit_off', 'Console Text', 'Made with Love.'], 'text', ['tomato', 'rebeccapurple', 'lightblue']);
 
-		function consoleText(words, id, colors) {
-			if (colors === undefined) colors = ['#fff'];
-			var visible = true;
-			var con = document.getElementById('console');
-			var letterCount = 1;
-			var x = 1;
-			var waiting = false;
-			var target = document.getElementById(id)
-			target.setAttribute('style', 'color:' + colors[0])
-			window.setInterval(function () {
 
-				if (letterCount === 0 && waiting === false) {
-					waiting = true;
-					target.innerHTML = words[0].substring(0, letterCount)
-					window.setTimeout(function () {
-						var usedColor = colors.shift();
-						colors.push(usedColor);
-						var usedWord = words.shift();
-						words.push(usedWord);
-						x = 1;
-						target.setAttribute('style', 'color:' + colors[0])
-						letterCount += x;
-						waiting = false;
-					}, 1000)
-				} else if (letterCount === words[0].length + 1 && waiting === false) {
-					waiting = true;
-					window.setTimeout(function () {
-						x = -1;
-						letterCount += x;
-						waiting = false;
-					}, 1000)
-				} else if (waiting === false) {
-					target.innerHTML = words[0].substring(0, letterCount)
-					letterCount += x;
-				}
-			}, 120)
-			window.setInterval(function () {
-				if (visible === true) {
-					con.className = 'console-underscore hidden'
-					visible = false;
-
-				} else {
-					con.className = 'console-underscore'
-
-					visible = true;
-				}
-			}, 400)
-		}
-	</script>
 </body>
 
 </html>
