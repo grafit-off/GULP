@@ -7,6 +7,7 @@
 ### Перенаправление для перехода в index.html внутри проекта
 [GitHub Pages](https://grafit-off.github.io/GULP/) - перенаправление через 10 сек.
 
+*gulp-cli должен быть глобально установлен
 
 ## Gulp включает в себя такие плагины
  *  browser-sync
