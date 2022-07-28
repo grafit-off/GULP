@@ -1,5 +1,6 @@
 .burger {
 	position: relative;
+	z-index: 5;
 
 	flex: 0 0 auto;
 
@@ -8,7 +9,7 @@
 	width: $burger-width;
 	height: $burger-heigth;
 
-	@media (max-width: md2) {
+	@media (max-width: $md2) {
 		display: block;
 	}
 
