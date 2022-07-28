@@ -15,7 +15,8 @@ class Burger {
 	open() {
 		this.disableBtn();
 		if (this.scrollWidth) {
-			document.body.style.paddingRight = `${this.scrollWidth}px`
+			document.body.style.paddingRight = `${this.scrollWidth}px`;
+			document.querySelectorAll('.fixed-padding').forEach(el => el.style.paddingRight = `${this.scrollWidth}px`);
 		}
 		this.btn.classList.add('burger--active');
 		this.btn.setAttribute('aria-expanded', true);
@@ -29,6 +30,7 @@ class Burger {
 		this.disableBtn();
 		if (this.scrollWidth) {
 			document.body.style.paddingRight = null;
+			document.querySelectorAll('.fixed-padding').forEach(el => el.style.paddingRight = null);
 		}
 		body.classList.remove('lock')
 		this.btn.classList.remove('burger--active');
