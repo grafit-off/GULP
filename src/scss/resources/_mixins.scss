@@ -23,6 +23,20 @@
 	}
 }
 
+@mixin maxheight($maxHeight) {
+	$length: $maxHeight + px;
+	@media (max-height: $length) {
+		@content;
+	}
+}
+@mixin minheight($minHeight) {
+	$length: $minHeight + px;
+	@media (min-height: $length) {
+		@content;
+	}
+}
+
+// ScrollBar
 @mixin scrollBar($bg-color, $color, $scrollbarWidth, $radius) {
 	&::-webkit-scrollbar {
 		width: $scrollbarWidth;
