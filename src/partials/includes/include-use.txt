@@ -1,0 +1,8 @@
+Example how to use @include:
+
+@include('../includes/_main-btn-link.html', {
+   'href': '#',
+   'modificator': 'black',
+   'elementClass': 'hero__link',
+   'text': 'Спец. предложение'
+})
