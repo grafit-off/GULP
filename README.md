@@ -1,20 +1,18 @@
-# Сборка task-менеджера Gulp и заготовки для верстки
+# Gulp and layout templates
 
-## Верстка
- *  ***Часто использованные javascript скрипты***
- *  ***SCSS стуктура и заготовки***
+## HTML | SCSS | JS
+ *  ***Commonly used javascript scripts***
+ *  ***SCSS structure and blocks***
 
-### Перенаправление для перехода в index.html внутри проекта
-[GitHub Pages](https://grafit-off.github.io/GULP/) - перенаправление через 10 сек.
+### Redirect to index.html after 10 seconds
+[GitHub Pages](https://grafit-off.github.io/GULP/)
 
-*gulp-cli должен быть глобально установлен
+*gulp-cli should be installed globally
 
-## Gulp включает в себя такие плагины
+## Gulp includes such plugins
  *  browser-sync
- *  del
  *  gp-autoprefixer
  *  gp-clean-css
- *  gp-cli
  *  gp-file-include
  *  gp-notify
  *  gp-rename
@@ -30,8 +28,8 @@
  *  del
  *  vinyl-ftp
 
-## Таски
- _Таск по сжатию картинок - tinyPNG_
+## Tasks
+ _Images compress - tinyPNG_
 
 ```js
 const tinypng = () => {
@@ -47,7 +45,7 @@ const tinypng = () => {
 exports.tinypng = tinypng;
 ```
 
-_Таск по запуск tunnel сервера - gulp host_
+_Tunnel server - gulp host_
 
 ```js
 const host = () => {
@@ -61,13 +59,13 @@ const host = () => {
 }
 exports.host = host;
 ```
-_Таск по валидации html кода - npm run validateHtml_
+_HTML validation - npm run validateHtml_
 
 ```
 	node-w3c-validator -f lint -evH -i app/**/*.html
 ```
 
-_Таск по запуску JSON Server- npm run jsonServer_
+_JSON Server - npm run jsonServer_
 
 ```
 	json-server --watch app/resources/db.json --port 3004
