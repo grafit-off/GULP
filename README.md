@@ -9,7 +9,7 @@
 
 *gulp-cli should be installed globally
 
-## Gulp includes such plugins
+## Gulp includes such plugins as
  *  browser-sync
  *  gp-autoprefixer
  *  gp-clean-css
